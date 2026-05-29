@@ -1,0 +1,49 @@
+{
+    "version": 4,
+    "configurations": [
+        {
+            "name": "ddm845r",
+            "compilerPath": "/usr/bin/arm-none-eabi-gcc",
+            "compilerArgs": [
+                "-mcpu=cortex-m3",
+                "-mthumb",
+                "-std=c11"
+            ],
+            "intelliSenseMode": "gcc-arm",
+            "includePath": [
+                "${workspaceFolder}/src/include",
+                "${workspaceFolder}/src/common",
+                "${workspaceFolder}/src/thirdparty/libopencm3/include"
+            ],
+            "defines": [
+                "STM32F1",
+                "BOARD_DDM845R=1",
+                "BOARD_DEVICE_ID=1",
+                "FW_APP=1"
+            ],
+            "cStandard": "c11"
+        },
+        {
+            "name": "ddl84r",
+            "compilerPath": "/usr/bin/arm-none-eabi-gcc",
+            "compilerArgs": [
+                "-mcpu=cortex-m3",
+                "-mthumb",
+                "-std=c11"
+            ],
+            "intelliSenseMode": "gcc-arm",
+            "includePath": [
+                "${workspaceFolder}/src/include",
+                "${workspaceFolder}/src/common",
+                "${workspaceFolder}/src/thirdparty/libopencm3/include"
+            ],
+            "defines": [
+                "STM32F1",
+                "BOARD_DDL84R=1",
+                "BOARD_DEVICE_ID=2",
+                "FW_APP=1"
+            ],
+            "cStandard": "c11"
+        }
+    ]
+}

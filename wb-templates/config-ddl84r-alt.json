@@ -1,0 +1,309 @@
+{
+    "device_type": "DDL84R-ALT",
+    "title": "DDL84R (alt firmware)",
+    "group": "g-dimmer",
+    "device": {
+        "name": "DDL84R-ALT",
+        "id": "ddl84r-alt",
+        "guard_interval_us": 10000,
+        "max_read_registers": 16,
+        "groups": [
+            {"title": "Channels",       "id": "channels",       "order": 0},
+            {"title": "Group Control",  "id": "group_control",  "order": 1},
+            {"title": "Auto Light",     "id": "auto_light",     "order": 2},
+            {"title": "Info",           "id": "info",           "order": 3}
+        ],
+        "channels": [
+            {
+                "name": "channel_1",
+                "reg_type": "holding",
+                "address": 40,
+                "format": "u16",
+                "type": "range",
+                "max": 1023,
+                "group": "channels"
+            },
+            {
+                "name": "channel_2",
+                "reg_type": "holding",
+                "address": 41,
+                "format": "u16",
+                "type": "range",
+                "max": 1023,
+                "group": "channels"
+            },
+            {
+                "name": "channel_3",
+                "reg_type": "holding",
+                "address": 42,
+                "format": "u16",
+                "type": "range",
+                "max": 1023,
+                "group": "channels"
+            },
+            {
+                "name": "channel_4",
+                "reg_type": "holding",
+                "address": 43,
+                "format": "u16",
+                "type": "range",
+                "max": 1023,
+                "group": "channels"
+            },
+            {
+                "name": "channel_1_percent",
+                "reg_type": "holding",
+                "address": 45,
+                "format": "u16",
+                "type": "range",
+                "max": 100,
+                "group": "channels"
+            },
+            {
+                "name": "channel_2_percent",
+                "reg_type": "holding",
+                "address": 46,
+                "format": "u16",
+                "type": "range",
+                "max": 100,
+                "group": "channels"
+            },
+            {
+                "name": "channel_3_percent",
+                "reg_type": "holding",
+                "address": 47,
+                "format": "u16",
+                "type": "range",
+                "max": 100,
+                "group": "channels"
+            },
+            {
+                "name": "channel_4_percent",
+                "reg_type": "holding",
+                "address": 48,
+                "format": "u16",
+                "type": "range",
+                "max": 100,
+                "group": "channels"
+            },
+            {
+                "name": "channel_1_on",
+                "reg_type": "holding",
+                "address": 49,
+                "type": "switch",
+                "group": "channels"
+            },
+            {
+                "name": "channel_2_on",
+                "reg_type": "holding",
+                "address": 50,
+                "type": "switch",
+                "group": "channels"
+            },
+            {
+                "name": "channel_3_on",
+                "reg_type": "holding",
+                "address": 51,
+                "type": "switch",
+                "group": "channels"
+            },
+            {
+                "name": "channel_4_on",
+                "reg_type": "holding",
+                "address": 52,
+                "type": "switch",
+                "group": "channels"
+            },
+            {
+                "name": "all_channels_level",
+                "reg_type": "holding",
+                "address": 53,
+                "format": "u16",
+                "type": "range",
+                "max": 1023,
+                "group": "group_control"
+            },
+            {
+                "name": "all_channels_percent",
+                "reg_type": "holding",
+                "address": 54,
+                "format": "u16",
+                "type": "range",
+                "max": 100,
+                "group": "group_control"
+            },
+            {
+                "name": "all_channels_on",
+                "reg_type": "holding",
+                "address": 55,
+                "type": "switch",
+                "group": "group_control"
+            },
+            {
+                "name": "channel_1_auto_level",
+                "reg_type": "holding",
+                "address": 60,
+                "format": "u16",
+                "type": "range",
+                "max": 1023,
+                "group": "auto_light"
+            },
+            {
+                "name": "channel_2_auto_level",
+                "reg_type": "holding",
+                "address": 61,
+                "format": "u16",
+                "type": "range",
+                "max": 1023,
+                "group": "auto_light"
+            },
+            {
+                "name": "channel_3_auto_level",
+                "reg_type": "holding",
+                "address": 62,
+                "format": "u16",
+                "type": "range",
+                "max": 1023,
+                "group": "auto_light"
+            },
+            {
+                "name": "channel_4_auto_level",
+                "reg_type": "holding",
+                "address": 63,
+                "format": "u16",
+                "type": "range",
+                "max": 1023,
+                "group": "auto_light"
+            },
+            {
+                "name": "channel_1_auto_percent",
+                "reg_type": "holding",
+                "address": 64,
+                "format": "u16",
+                "type": "range",
+                "max": 100,
+                "group": "auto_light"
+            },
+            {
+                "name": "channel_2_auto_percent",
+                "reg_type": "holding",
+                "address": 65,
+                "format": "u16",
+                "type": "range",
+                "max": 100,
+                "group": "auto_light"
+            },
+            {
+                "name": "channel_3_auto_percent",
+                "reg_type": "holding",
+                "address": 66,
+                "format": "u16",
+                "type": "range",
+                "max": 100,
+                "group": "auto_light"
+            },
+            {
+                "name": "channel_4_auto_percent",
+                "reg_type": "holding",
+                "address": 67,
+                "format": "u16",
+                "type": "range",
+                "max": 100,
+                "group": "auto_light"
+            },
+            {
+                "name": "auto_light_suppress_s",
+                "reg_type": "holding",
+                "address": 5008,
+                "format": "u16",
+                "type": "range",
+                "max": 3600,
+                "group": "auto_light"
+            },
+            {
+                "name": "fw_version",
+                "reg_type": "holding",
+                "address": 9000,
+                "format": "u16",
+                "type": "value",
+                "readonly": true,
+                "group": "info"
+            },
+            {
+                "name": "device_mode",
+                "reg_type": "holding",
+                "address": 9002,
+                "format": "u16",
+                "type": "value",
+                "readonly": true,
+                "group": "info"
+            }
+        ],
+        "translations": {
+            "en": {
+                "Channels":             "Channels",
+                "Group Control":        "Group Control",
+                "Auto Light":           "Auto Light",
+                "Info":                 "Info",
+                "channel_1":            "Channel 1",
+                "channel_2":            "Channel 2",
+                "channel_3":            "Channel 3",
+                "channel_4":            "Channel 4",
+                "channel_1_percent":    "Channel 1 Percent",
+                "channel_2_percent":    "Channel 2 Percent",
+                "channel_3_percent":    "Channel 3 Percent",
+                "channel_4_percent":    "Channel 4 Percent",
+                "channel_1_on":         "Channel 1 On",
+                "channel_2_on":         "Channel 2 On",
+                "channel_3_on":         "Channel 3 On",
+                "channel_4_on":         "Channel 4 On",
+                "all_channels_level":   "Group Level",
+                "all_channels_percent": "Group Percent",
+                "all_channels_on":      "Group On/Off",
+                "channel_1_auto_level": "Channel 1 Auto Level",
+                "channel_2_auto_level": "Channel 2 Auto Level",
+                "channel_3_auto_level": "Channel 3 Auto Level",
+                "channel_4_auto_level": "Channel 4 Auto Level",
+                "channel_1_auto_percent": "Channel 1 Auto Percent",
+                "channel_2_auto_percent": "Channel 2 Auto Percent",
+                "channel_3_auto_percent": "Channel 3 Auto Percent",
+                "channel_4_auto_percent": "Channel 4 Auto Percent",
+                "auto_light_suppress_s": "Auto Light Suppress, s",
+                "fw_version":           "Firmware Version",
+                "device_mode":          "Device Mode"
+            },
+            "ru": {
+                "Channels":             "Каналы",
+                "Group Control":        "Групповое управление",
+                "Auto Light":           "Автосвет",
+                "Info":                 "Информация",
+                "channel_1":            "Канал 1",
+                "channel_2":            "Канал 2",
+                "channel_3":            "Канал 3",
+                "channel_4":            "Канал 4",
+                "channel_1_percent":    "Канал 1 процент",
+                "channel_2_percent":    "Канал 2 процент",
+                "channel_3_percent":    "Канал 3 процент",
+                "channel_4_percent":    "Канал 4 процент",
+                "channel_1_on":         "Канал 1 вкл",
+                "channel_2_on":         "Канал 2 вкл",
+                "channel_3_on":         "Канал 3 вкл",
+                "channel_4_on":         "Канал 4 вкл",
+                "all_channels_level":   "Группа — уровень",
+                "all_channels_percent": "Группа — процент",
+                "all_channels_on":      "Группа — вкл/выкл",
+                "channel_1_auto_level": "Канал 1 авто уровень",
+                "channel_2_auto_level": "Канал 2 авто уровень",
+                "channel_3_auto_level": "Канал 3 авто уровень",
+                "channel_4_auto_level": "Канал 4 авто уровень",
+                "channel_1_auto_percent": "Канал 1 авто процент",
+                "channel_2_auto_percent": "Канал 2 авто процент",
+                "channel_3_auto_percent": "Канал 3 авто процент",
+                "channel_4_auto_percent": "Канал 4 авто процент",
+                "auto_light_suppress_s": "Задержка автосвета, с",
+                "fw_version":           "Версия прошивки",
+                "device_mode":          "Режим устройства"
+            }
+        }
+    }
+}

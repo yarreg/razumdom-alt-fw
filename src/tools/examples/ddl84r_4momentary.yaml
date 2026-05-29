@@ -1,0 +1,54 @@
+# DDL84R — 4 независимых канала, каждый управляется momentary кнопкой.
+# Короткое нажатие: toggle (вкл/выкл).
+# Удержание: диммирование по кругу.
+# DI0..DI8 — GPIO входы с подтяжкой, active-low.
+#
+# Прошивка: BOARD=ddl84r
+# Применить: python modbus_configure.py write --port /dev/ttyUSB0 --slave 34 --config ddl84r_4momentary.yaml
+
+modbus:
+  address: 34
+  baud: 57600
+  parity: N
+  stop_bits: 2
+
+inputs:
+  di_adc_active_threshold: 1000
+  debounce_ms: 30
+  short_press_min_ms: 50
+  short_press_max_ms: 700
+  long_press_ms: 800
+
+auto_light:
+  suppress_s: 15
+
+channels:
+  1: {min_level: 100, max_level: 1023, default_level: 1023, night_level: 0, fade_on_ms: 300, fade_off_ms: 300, output_curve: 0}
+  2: {min_level: 100, max_level: 1023, default_level: 1023, night_level: 0, fade_on_ms: 300, fade_off_ms: 300, output_curve: 0}
+  3: {min_level: 100, max_level: 1023, default_level: 1023, night_level: 0, fade_on_ms: 300, fade_off_ms: 300, output_curve: 0}
+  4: {min_level: 100, max_level: 1023, default_level: 1023, night_level: 0, fade_on_ms: 300, fade_off_ms: 300, output_curve: 0}
+
+bindings:
+  - type: momentary
+    target: channel1
+    input: DI1
+    hold_step: 10
+    hold_period_ms: 20
+
+  - type: momentary
+    target: channel2
+    input: DI2
+    hold_step: 10
+    hold_period_ms: 20
+
+  - type: momentary
+    target: channel3
+    input: DI3
+    hold_step: 10
+    hold_period_ms: 20
+
+  - type: momentary
+    target: channel4
+    input: DI4
+    hold_step: 10
+    hold_period_ms: 20

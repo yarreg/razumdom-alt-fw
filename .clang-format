@@ -1,0 +1,25 @@
+BasedOnStyle: LLVM
+IndentWidth: 4
+ContinuationIndentWidth: 8
+AlignOperands: DontAlign
+BreakBeforeBinaryOperators: NonAssignment
+TabWidth: 4
+UseTab: Never
+PointerAlignment: Right
+DerivePointerAlignment: false
+ColumnLimit: 120
+SortIncludes: Never
+ReflowComments: false
+AllowShortFunctionsOnASingleLine: None
+AllowShortEnumsOnASingleLine: false
+AllowShortIfStatementsOnASingleLine: WithoutElse
+AllowShortLoopsOnASingleLine: true
+BreakBeforeBraces: Custom
+BraceWrapping:
+  AfterFunction: false
+  AfterControlStatement: Never
+  AfterStruct: false
+  AfterEnum: false
+  AfterUnion: false
+  BeforeElse: false
+AlignConsecutiveMacros: Consecutive

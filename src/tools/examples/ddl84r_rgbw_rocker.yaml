@@ -1,0 +1,36 @@
+# DDL84R — RGBW светодиодная лента, управляемая одной качелей.
+# Все 4 канала (R, G, B, W) двигаются синхронно.
+# DI0..DI8 — GPIO входы с подтяжкой, active-low.
+#
+# Прошивка: BOARD=ddl84r
+# Применить: python modbus_configure.py write --port /dev/ttyUSB0 --slave 34 --config ddl84r_rgbw_rocker.yaml
+
+modbus:
+  address: 34
+  baud: 57600
+  parity: N
+  stop_bits: 2
+
+inputs:
+  di_adc_active_threshold: 1000  # для GPIO DI не используется, но должен быть задан
+  debounce_ms: 30
+  short_press_min_ms: 50
+  short_press_max_ms: 700
+  long_press_ms: 800
+
+auto_light:
+  suppress_s: 15
+
+channels:
+  1: {min_level: 0, max_level: 1023, default_level: 1023, night_level: 30, fade_on_ms: 400, fade_off_ms: 600, output_curve: 0}
+  2: {min_level: 0, max_level: 1023, default_level: 1023, night_level: 30, fade_on_ms: 400, fade_off_ms: 600, output_curve: 0}
+  3: {min_level: 0, max_level: 1023, default_level: 1023, night_level: 30, fade_on_ms: 400, fade_off_ms: 600, output_curve: 0}
+  4: {min_level: 0, max_level: 1023, default_level: 1023, night_level: 30, fade_on_ms: 400, fade_off_ms: 600, output_curve: 0}
+
+bindings:
+  - type: rocker
+    target: rgbw          # управляются все 4 канала одновременно
+    up: DI1               # верхняя клавиша: включить / поднять яркость
+    down: DI2             # нижняя клавиша: выключить / опустить / night mode
+    hold_step: 8          # шаг диммирования при удержании
+    hold_period_ms: 20    # интервал шага, мс
